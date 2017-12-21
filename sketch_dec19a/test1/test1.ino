@@ -33,6 +33,7 @@ void loop() {
     ting = 1;
   }
   if ( ting == 0) {
+    
     for (int i = 4; i < 10; i++) {
       digitalWrite(i, 1);
       delay(500);
@@ -47,6 +48,7 @@ void loop() {
       digitalWrite(i, 1);
       delay(500);
       digitalWrite(i, 0);
+      
     }
   }
 
