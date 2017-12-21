@@ -7,10 +7,10 @@ int led4 = 7;
 int led5 = 8;
 int led6 = 9;
 int test[] {4, 5, 6, 7, 8, 9};
-boolean ting = 0;
-
+boolean ting;
 
 void setup() {
+  ting = 0;
   Serial.begin(9600);
   pinMode(pb1, INPUT_PULLUP);
   pinMode(pb2, INPUT_PULLUP);
@@ -20,16 +20,16 @@ void setup() {
 }
 
 void loop() {
-Serial.print(digitalRead(pb1));
-Serial.print("  ");
-Serial.println(digitalRead(pb2));
-Serial.println("  ");
-Serial.println(ting);
+  Serial.print(digitalRead(pb1));
+  Serial.print("  ");
+  Serial.print(digitalRead(pb2));
+  Serial.print("  ");
+  Serial.println(ting);
 
-  if ( digitalRead(pb1 == 0)) {
+  if ( digitalRead(pb1) == 0) {
     ting = 0;
   }
-  if (digitalRead(pb2 == 0)) {
+  if (digitalRead(pb2) == 0) {
     ting = 1;
   }
   if ( ting == 0) {
@@ -40,9 +40,9 @@ Serial.println(ting);
     }
   }
   if (ting == 1) {
-    for (int i = 9; i >3; i--) {
+    for (int i = 9; i > 3; i--) {
       if ( i == 3) {
-        i =9 ;
+        i = 9 ;
       }
       digitalWrite(i, 1);
       delay(500);
