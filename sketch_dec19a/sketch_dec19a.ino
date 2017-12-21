@@ -1,7 +1,7 @@
-int pb0 = 8;
-int pb1 = 9;
-int  led[] {2, 3, 4, 5, 6, 7};
-int  test[] {2, 3, 4, 5, 6, 7};
+int pb0 = 2;
+int pb1 = 3;
+int  led[] { 4, 5, 6, 7,8,9};
+int  test[] {4, 5, 6, 7,8,9};
 int counter = 0;//  what row in the array should be called, for turning on segments
 int debounceDelay = 200;
 int buttonState;// the current reading from the input pin
@@ -67,6 +67,7 @@ void screen() {
 }
 
 void loop() {
+  Serial.begin(9600);
   screen();;;
 
   //button1
@@ -131,4 +132,5 @@ void loop() {
       }
     }
   }
+  Serial.print( digitalRead(pb0));
 }
